@@ -37,5 +37,5 @@ def news_crawler(start_date):
     final_result = clean_data(news_list_all)
     return final_result
 
-if __name__ == "__main__":
-    search_result = news_crawler(datetime(2022,2,5))
+# if __name__ == "__main__":
+#     search_result = news_crawler(datetime(2022,2,5))

@@ -17,5 +17,5 @@ def weather_crawler(start_date):
 
     return result_df
 
-if __name__ == "__main__":
-    final_result = weather_crawler(datetime(2023,3,19))
+# if __name__ == "__main__":
+#     final_result = weather_crawler(datetime(2023,3,19))
