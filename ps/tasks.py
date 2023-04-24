@@ -1,7 +1,7 @@
 from worker import app
-import pk.udn_news_crawler as uc
-import pk.weather_crawler as wc
-import pk.ppt_crawler as pc
+import crawler_pk.udn_news_crawler as uc
+import crawler_pk.weather_crawler as wc
+import crawler_pk.ppt_crawler as pc
 from datetime import datetime
 
 # 註冊 task, 有註冊的 task 才可以變成任務發送給 rabbitmq
