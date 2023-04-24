@@ -1,7 +1,6 @@
 from worker import app
 import crawler_pk.udn_news_crawler as uc
 import crawler_pk.weather_crawler as wc
-import crawler_pk.ppt_crawler as pc
 from datetime import datetime
 
 # 註冊 task, 有註冊的 task 才可以變成任務發送給 rabbitmq
@@ -19,8 +18,5 @@ def crawler(x):
     print("---------------- wc_result start crawler -------------------")
     print(wc_result)
     print("---------------- wc_result end crawler -------------------")
-    # print("---------------- pc_result start crawler -------------------")
-    # print(pc_result)
-    # print("---------------- pc_result end crawler -------------------")
     print("---------------- end crawler -------------------")
     return x
