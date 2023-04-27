@@ -2,8 +2,8 @@ import importlib
 import typing
 
 from worker import app
-import sys
-sys.path.append("./crawler")
+import crawler.taiwan_tpex_stock_price as tpex
+import crawler.taiwan_twse_stock_price as twse
 
 # 註冊 task, 有註冊的 task 才可以變成任務發送給 rabbitmq
 @app.task()
@@ -14,6 +14,7 @@ def crawler(dataset: str,parameters: typing.Dict[str, str],):
     # df = getattr(importlib.import_module(f"crawler.{dataset}"),"crawler",)(parameters=parameters)
     # df = getattr(importlib.import_module(f"crawler.{dataset}"))(parameters=parameters)
     # print(df)
+    df_twse = twse.crawler(parameters)
     print("'crawler_date : ",parameters['crawler_date'])
     print("crawler")
     print("upload db")
