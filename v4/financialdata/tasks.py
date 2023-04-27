@@ -1,9 +1,8 @@
 import importlib
 import typing
-
+from datetime import datetime
 from worker import app
-import crawler.taiwan_tpex_stock_price as tpex
-import crawler.taiwan_twse_stock_price as twse
+import crawler_pk.udn_news_crawler as nc
 
 # 註冊 task, 有註冊的 task 才可以變成任務發送給 rabbitmq
 @app.task()
@@ -14,7 +13,9 @@ def crawler(dataset: str,parameters: typing.Dict[str, str],):
     # df = getattr(importlib.import_module(f"crawler.{dataset}"),"crawler",)(parameters=parameters)
     # df = getattr(importlib.import_module(f"crawler.{dataset}"))(parameters=parameters)
     # print(df)
-    df_twse = twse.crawler(parameters)
+    time_format = datetime.strptime(parameters['crawler_date'],"%Y-%m-%d")
+    df_nc = nc.news_crawler(time_format)
     print("'crawler_date : ",parameters['crawler_date'])
+    print(df_nc)
     print("crawler")
     print("upload db")

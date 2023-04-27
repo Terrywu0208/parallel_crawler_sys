@@ -50,7 +50,7 @@ def crawler(parameters: typing.Dict[str, str]):
         data = pd.DataFrame(resp_data["aaData"])
         data = data[[0, 1, 2, 4, 5, 6]]
         data.columns = columns
-        data["date"] = parameters.get("crawler_date", "")
+        data["date"] = parameters.get("crawler_date", "%Y-%m-%d")
     else:
         data = pd.DataFrame()
     return data
