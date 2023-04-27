@@ -14,5 +14,6 @@ def crawler(dataset: str,parameters: typing.Dict[str, str],):
     # df = getattr(importlib.import_module(f"crawler.{dataset}"),"crawler",)(parameters=parameters)
     # df = getattr(importlib.import_module(f"crawler.{dataset}"))(parameters=parameters)
     # print(df)
+    getattr(print(f"{dataset} {parameters}"))(parameters=parameters)
     print("crawler")
     print("upload db")
