@@ -2,10 +2,8 @@
 # import socket
 import time
 import typing
-
 import pymysql
 from loguru import logger
-
 from celery import Celery, Task
 import db
 from db.env_setting_pk.config import (
@@ -54,8 +52,7 @@ from db.env_setting_pk.config import (
 #         )
 
 broker = (
-    f"pyamqp://{WORKER_ACCOUNT}:{WORKER_PASSWORD}@"
-    f"{MESSAGE_QUEUE_HOST}:{MESSAGE_QUEUE_PORT}/"
+    f"pyamqp://{WORKER_ACCOUNT}:{WORKER_PASSWORD}@{MESSAGE_QUEUE_HOST}:{MESSAGE_QUEUE_PORT}/"
 )
 
 app = Celery(

@@ -1,7 +1,5 @@
-from financialdata.db.router import (
-    Router,
-)
-from financialdata.db.db import *
+from router import Router
+from db import *
 
 router = Router()
 
