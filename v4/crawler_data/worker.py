@@ -6,15 +6,17 @@ import pymysql
 from loguru import logger
 from celery import Celery, Task
 import db
-from db.env_setting_pk.config import (
-    MESSAGE_QUEUE_HOST,
-    MESSAGE_QUEUE_PORT,
-    WORKER_ACCOUNT,
-    WORKER_PASSWORD,
-)
+# from db.env_setting_pk.config import (
+#     MESSAGE_QUEUE_HOST,
+#     MESSAGE_QUEUE_PORT,
+#     WORKER_ACCOUNT,
+#     WORKER_PASSWORD,
+# )
+
+import db.EnvSettingPk.config as EnvConfig
 
 broker = (
-    f"pyamqp://{WORKER_ACCOUNT}:{WORKER_PASSWORD}@{MESSAGE_QUEUE_HOST}:{MESSAGE_QUEUE_PORT}/"
+    f"pyamqp://{EnvConfig.WORKER_ACCOUNT}:{EnvConfig.WORKER_PASSWORD}@{EnvConfig.MESSAGE_QUEUE_HOST}:{EnvConfig.MESSAGE_QUEUE_PORT}/"
 )
 
 app = Celery(
