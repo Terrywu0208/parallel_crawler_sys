@@ -1,7 +1,7 @@
-from router import Router
-from db import *
+import router
+import db
 
-router = Router()
+router = router.Router()
 
 
 def get_db_router():
