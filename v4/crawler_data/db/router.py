@@ -1,6 +1,6 @@
 import time
 import typing
-import clients
+import db.clients
 from loguru import logger
 from sqlalchemy import engine
 
@@ -39,14 +39,14 @@ def check_connect_alive(
 
 class Router:
     def __init__(self):
-        self._mysql_financialdata_conn = clients.get_mysql_financialdata_conn()
+        self._mysql_financialdata_conn = db.clients.get_mysql_financialdata_conn()
 
     def check_mysql_financialdata_conn_alive(
         self,
     ):
         self._mysql_financialdata_conn = check_connect_alive(
             self._mysql_financialdata_conn,
-            clients.get_mysql_financialdata_conn,
+            db.clients.get_mysql_financialdata_conn,
         )
         return self._mysql_financialdata_conn
 
