@@ -1,8 +1,8 @@
-import router
-import db
+# import router
+# import db
 
-router = router.Router()
+# router = router.Router()
 
 
-def get_db_router():
-    return router
+# def get_db_router():
+#     return router
