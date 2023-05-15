@@ -4,7 +4,7 @@ from datetime import datetime
 from worker import app
 import crawler_pk.udn_news_crawler as nc
 import crawler_pk.weather_crawler as wc
-import db
+import db.db
 
 # 註冊 task, 有註冊的 task 才可以變成任務發送給 rabbitmq
 @app.task()
