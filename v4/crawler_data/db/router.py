@@ -1,11 +1,8 @@
 import time
 import typing
-
+import clients
 from loguru import logger
 from sqlalchemy import engine
-from financialdata.db import (
-    clients,
-)
 
 
 def check_alive(

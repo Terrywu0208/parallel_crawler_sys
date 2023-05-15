@@ -6,7 +6,7 @@ MYSQL_DATA_PASSWORD = os.environ.get("MYSQL_DATA_PASSWORD", "test")
 MYSQL_DATA_PORT = int(os.environ.get("MYSQL_DATA_PORT", "3306"))
 MYSQL_DATA_DATABASE = os.environ.get(
     "MYSQL_DATA_DATABASE",
-    "FinancialData",
+    "mydb",
 )
 
 WORKER_ACCOUNT = os.environ.get("WORKER_ACCOUNT", "worker")
