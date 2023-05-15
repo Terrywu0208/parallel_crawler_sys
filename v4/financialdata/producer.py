@@ -1,6 +1,6 @@
 import sys
 import datetime
-
+from loguru import logger
 from tasks import crawler
 
 

@@ -31,6 +31,7 @@ start parallel sys by run
    1. Docker Portainer => localhost:9000
    2. RabbitMQ => localhost:15672
    3. Flower => localhost:5555
+   4. Mysql (phpmyadmin) => localhost:8080
 4. sent tasks to RabbitMQ to storage => run producer.py
    1. run command lines : python3 producer.py {crawler_name} {start_time (format : yyyy:mm:dd)} {end_time (format : yyyy:mm:dd)}
    2. crawler selections
