@@ -5,7 +5,6 @@ import pymysql
 from loguru import logger
 from sqlalchemy import engine
 
-global trans
 
 def update2mysql_by_pandas(
     df: pd.DataFrame,
@@ -83,6 +82,7 @@ def commit(
     sql: typing.Union[str, typing.List[str]],
     mysql_conn: engine.base.Connection = None,
 ):
+    global trans
     logger.info("commit")
     try:
         trans = mysql_conn.begin()
