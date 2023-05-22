@@ -98,9 +98,8 @@ def commit(
             mysql_conn.execution_options(autocommit=False).execute(sql)
         trans.commit()
     except Exception as e:
-        pass
-        # trans.rollback()
-        # logger.info(e)
+        trans.rollback()
+        logger.info(e)
 
 
 def upload_data(
