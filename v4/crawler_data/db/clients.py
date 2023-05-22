@@ -6,7 +6,7 @@
 #     MYSQL_DATA_DATABASE,
 # )
 
-import EnvSettingPk.config as EnvConfig
+import db.EnvSettingPk.config as EnvConfig
 
 from sqlalchemy import (
     create_engine,
