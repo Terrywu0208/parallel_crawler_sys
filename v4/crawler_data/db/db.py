@@ -82,7 +82,6 @@ def commit(
     sql: typing.Union[str, typing.List[str]],
     mysql_conn: engine.base.Connection = None,
 ):
-    global trans
     logger.info("commit")
     try:
         trans = mysql_conn.begin()
@@ -99,8 +98,9 @@ def commit(
             mysql_conn.execution_options(autocommit=False).execute(sql)
         trans.commit()
     except Exception as e:
-        trans.rollback()
-        logger.info(e)
+        pass
+        # trans.rollback()
+        # logger.info(e)
 
 
 def upload_data(
