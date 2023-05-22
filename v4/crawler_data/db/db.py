@@ -5,6 +5,7 @@ import pymysql
 from loguru import logger
 from sqlalchemy import engine
 
+global trans
 
 def update2mysql_by_pandas(
     df: pd.DataFrame,
